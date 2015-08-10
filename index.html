@@ -1,10 +1,64 @@
 <!doctype html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="">
+		<title>Code Warrior | We are the digital warriors! </title>
+		
+		<!-- External CSS Styles -->
+		<link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/bower_components/fontawesome/css/font-awesome.min.css">
+		<!-- Internal CSS Styles-->
 		<link rel="stylesheet" type="text/css" href="css/main.css">
-		<title>Code wWarrior | We are the digital warrior! </title>
+		
+		<!-- External Javascript -->
+		<script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+		
+		<!-- Internal Javascript -->
+		<script type="text/javascript" src="js/main.js"></script>
 	</head>
-	<body>
+	<body ng-app="codewarriorApp">
+		
+		
+		<header>
+			<div class="container center-block">
+				<div class="col-xs-6">
+					<img class="codewarrior-logo" src="/img/codewarrior-logo.png" />
+				</div>
+				<div class="col-xs-6">
+					<ul class="no-style-and-inline">
+						<li><i class="fa fa-facebook"></i></li>
+						<li><i class="fa fa-twitter"></i></li>
+						<li><i class="fa fa-linkedin"></i></li>
+						<li><i class="fa fa-pinterest"></i></li>
+						<li><i class="fa fa-github"></i></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		
+		<nav>
+			<ul>
+				<li>About</li>
+				<li>Members</li>
+				<li>Clients</li>
+				<li>Blog</li>
+				<li>Career</li>
+				<li>Contact</li>
+			</ul>	
+		</nav>
+
+		<section>
+			<div class="container" ng-controller="HomeController">
+				<h1>{{ title }}</h1>
+			</div>
+		</section>
+		
+		<footer>
+			Copyright © Code Warrior
+		</footer>
+		<!-- Modules -->
+		<script type="text/javascript" src="js/app.js"></script>
+
+		<!-- Controllers -->
+		<script type="text/javascript" src="js/controllers/HomeController.js"></script>
 	</body>
 </html>
