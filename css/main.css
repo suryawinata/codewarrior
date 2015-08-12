@@ -1,0 +1,43 @@
+header{
+	background-image: -ms-linear-gradient(top left, #72CEB2 0%, #43B3E3 100%);
+    background-image: -moz-linear-gradient(top left, #72CEB2 0%, #43B3E3 100%);
+    background-image: -o-linear-gradient(top left, #72CEB2 0%, #43B3E3 100%);
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #72CEB2), color-stop(1, #43B3E3));
+    background-image: -webkit-linear-gradient(top left, #72CEB2 0%, #43B3E3 100%);
+    background-image: linear-gradient(to bottom right, #72CEB2 0%, #43B3E3 100%);
+    text-align: center;
+    border-bottom: 5px solid #fff;
+    padding-top: 10px;
+}
+.no-style-and-inline{
+	list-style: none;
+    -webkit-padding-start: 0px;
+    padding: 10px;
+}
+.no-style-and-inline>li{
+	display: inline-block;
+    border-radius: 10px;
+    background-color: white;
+    min-width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+/** navigation styles **/
+.navigation>li{
+    padding: 8px;
+    display: block;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    height: auto;
+    margin: 3px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/** sliders-module **/
+.slider-module{
+	background-color: #4D2852;
+	height: 500px;
+}
