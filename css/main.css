@@ -39,7 +39,7 @@ header{
 /** sliders-module **/
 .slider-module{
 	background-color: #4D2852;
-	height: 500px;
+	height: 9000px;
 }
 
 @media only screen and (max-width : 768px) {
@@ -49,6 +49,18 @@ header{
     div.slicknav_menu,
     .slicknav_btn{
         background: none;
+        position:relative;
+    }
+    #mobile-menu{
+        position: fixed;
+        height: auto;
+        width: 100%;
+        background-image: linear-gradient(to bottom right, #72CEB2 0%, #58BFCD 100%);
+        top: 0;
+        z-index: 2;
+    }
+    .top-main{
+        margin-top: 40px;
     }
 }
 @media only screen and (min-width: 769px) {
@@ -56,6 +68,9 @@ header{
         display: block;
     }
     div.slicknav_menu{
+        display: none;
+    }
+    #mobile-menu{
         display: none;
     }
 }
