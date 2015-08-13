@@ -1,1 +1,1 @@
-web: http-server -a localhost -p 80
+web: http-server -a localhost -p 8080
