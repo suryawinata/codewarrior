@@ -6,21 +6,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 		<!-- External CSS Styles -->
-		<link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="/bower_components/fontawesome/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="/bower_components/normalize.css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="/bower_components/fontawesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="/bower_components/normalize.css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="/bower_components/slicknav/dist/slicknav.min.css" />
 		
 		<!-- Internal CSS Styles-->
-		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		
 		<!-- External Javascript -->
+		<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
 		<script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
-
+		<script type="text/javascript" src="/bower_components/slicknav/dist/jquery.slicknav.js"></script>
 	</head>
 	<body ng-app="codewarriorApp">
 		
 		
 		<header>
+			<div id="mobile-menu">
+			</div>
 			<div class="container center-block">
 				<div class="col-xs-12 col-sm-6">
 					<img class="codewarrior-logo" src="/img/code-warrior-logo.png" />
@@ -35,15 +39,13 @@
 					</ul>
 				</div>
 			</div>
-			<nav>
-				<ul class="no-style-and-inline navigation">
-					<li>About</li>
-					<li>Members</li>
-					<li>Clients</li>
-					<li>Blog</li>
-					<li>Career</li>
-					<li>Contact</li>
-				</ul>	
+			<nav id="menu">
+				<li><a class="scroll" href="#about">About</a></li>
+				<li><a class="scroll" href="#members">Members</a></li>
+				<li><a class="scroll" href="#clients">Clients</a></li>
+				<li><a class="scroll" href="#blog">Blog</a></li>
+				<li><a class="scroll" href="#career">Career</a></li>
+				<li><a class="scroll" href="#contact">Contact</a></li>
 			</nav>
 		</header>
 
@@ -61,5 +63,7 @@
 
 		<!-- Controllers -->
 		<script type="text/javascript" src="js/controllers/HomeController.js"></script>
+
+		<script type="text/javascript" src="js/codewarrior.js"></script>
 	</body>
 </html>
