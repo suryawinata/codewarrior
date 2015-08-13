@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.html",
   "dependencies": {
-    "http-server": "^0.8.0"
+    "http-server": "^0.8.0",
+    "bower": "^1.4.1"
   },
   "devDependencies": {
-    "bower": "^1.4.1"
+    
   },
   "scripts": {
     "postinstall": "bower install"
