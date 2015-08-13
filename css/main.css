@@ -8,6 +8,7 @@ header{
     text-align: center;
     border-bottom: 5px solid #fff;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 .no-style-and-inline{
 	list-style: none;
@@ -62,15 +63,40 @@ header{
     .top-main{
         margin-top: 40px;
     }
+    .pull-right { 
+        float: none!important; 
+    }
+    .hvr-bounce-to-right:before{
+        background: none;
+    }
 }
 @media only screen and (min-width: 769px) {
-    nav#menu{
-        display: block;
-    }
     div.slicknav_menu{
         display: none;
     }
     #mobile-menu{
         display: none;
+    }
+    nav#menu{
+        display: block;
+    }
+    nav#menu li {
+        display: inline-block;
+        list-style: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 20px;
+        border-left: 1px solid #fff;
+        float: left;
+    }
+    nav#menu li a{
+        color: #fff;
+        text-decoration: none;
+    }
+    nav#menu li:hover a{
+        color: #43B3E3;
+    }
+    .hvr-bounce-to-right:before{
+        background:#fff; 
     }
 }
