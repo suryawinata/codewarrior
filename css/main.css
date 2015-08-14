@@ -43,6 +43,17 @@ header{
 	height: 200px;
 }
 
+/** footer **/
+.footer-style{
+    list-style: none;
+    text-align: center;
+}
+.footer-style li{
+    display:inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 @media only screen and (max-width : 768px) {
     nav#menu{
         display: none;
