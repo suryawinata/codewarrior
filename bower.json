@@ -19,6 +19,7 @@
     "bootstrap": "~3.3.5",
     "normalize.css": "~3.0.3",
     "slicknav": "~1.0.4",
-    "Hover": "~2.0.2"
+    "Hover": "~2.0.2",
+    "angular-route": "~1.4.5"
   }
 }
