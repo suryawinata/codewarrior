@@ -5,10 +5,10 @@
   "main": "index.html",
   "dependencies": {
     "http-server": "^0.8.0",
-    "bower": "^1.4.1"
+    "bower": "^1.4.1",
+    "grunt": "^0.4.5"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-concat-css": "^0.3.1",
     "grunt-connect": "^0.2.0",
@@ -16,7 +16,7 @@
     "grunt-contrib-jshint": "^0.11.3"
   },
   "scripts": {
-    "postinstall": "grunt"
+    "postinstall": "bower install"
   },
   "author": "",
   "license": "ISC"
