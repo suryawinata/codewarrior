@@ -1,1 +1,1 @@
-web: http-server
+web: ./node_modules/.bin/grunt

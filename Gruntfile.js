@@ -23,17 +23,17 @@ module.exports = function(grunt) {
         dest: "css/main.min.css"
       },
     },
-    // connect: {
-    //   codewarrior: {
-    //     port: 9001
-    //   }
-    // }
+    connect: {
+      codewarrior: {
+        port: process.env.PORT || 3000
+      }
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-concat-css');
-  //grunt.loadNpmTasks('grunt-connect');
+  grunt.loadNpmTasks('grunt-connect');
   // Default task(s).
-  grunt.registerTask('default', ['cssmin','concat_css');
+  grunt.registerTask('default', ['cssmin','concat_css','connect:codewarrior']);
 
 };
