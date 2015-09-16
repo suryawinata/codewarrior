@@ -16,7 +16,8 @@
     "grunt-contrib-jshint": "^0.11.3"
   },
   "scripts": {
-    "postinstall": "bower install"
+    "postinstall": "bower install",
+    "postinstall": "grunt"
   },
   "author": "",
   "license": "ISC"
