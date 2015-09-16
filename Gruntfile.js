@@ -22,18 +22,18 @@ module.exports = function(grunt) {
         src: ["css/minified/*.min.css"],
         dest: "css/main.min.css"
       },
-    },
-    connect: {
-      codewarrior: {
-        port: process.env.PORT || 3000
-      }
     }
+    // connect: {
+    //   codewarrior: {
+    //     port: process.env.PORT || 3000
+    //   }
+    // }
   });
 
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-concat-css');
-  grunt.loadNpmTasks('grunt-connect');
+  //grunt.loadNpmTasks('grunt-connect');
   // Default task(s).
-  grunt.registerTask('heroku', ['cssmin','concat_css','connect:codewarrior']);
+  grunt.registerTask('heroku', ['cssmin','concat_css']);
 
 };
