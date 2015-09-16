@@ -34,6 +34,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-concat-css');
   grunt.loadNpmTasks('grunt-connect');
   // Default task(s).
-  grunt.registerTask('default', ['cssmin','concat_css','connect:codewarrior']);
+  grunt.registerTask('heroku', ['cssmin','concat_css','connect:codewarrior']);
 
 };
