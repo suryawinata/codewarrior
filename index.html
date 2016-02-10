@@ -13,25 +13,30 @@
 		<link rel="stylesheet" type="text/css" href="/bower_components/Hover/css/hover-min.css" />
 		
 		<!-- Internal CSS Styles-->
-		<link rel="stylesheet" type="text/css" href="css/main.min.css" />
+		<link rel="stylesheet" type="text/css" href="CodeWarrior-Storefront/shared/css/main.min.css" />
 		
 		<!-- External Javascript -->
 		<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
 		<script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
 		<script type="text/javascript" src="/bower_components/angular-route/angular-route.min.js"></script>
 		<script type="text/javascript" src="/bower_components/slicknav/dist/jquery.slicknav.js"></script>
+
+		<!-- Internal Javascript -->
+		<script type="text/javascript" src="/CodeWarrior-Storefront/shared/js/header.js"></script>
 	</head>
 	<body ng-app="codewarriorApp">
 		
-		<div ng-include="'js/views/header.html'"></div>
+		<div ng-include="'CodeWarrior-Storefront/views/header.html'"></div>
+		
+		<div ng-view></div>
 
-		<section ng-controller="mainController">
-			<div ng-view class="question"></div>
-		</section>
-
-		<div ng-include="'js/views/footer.html'"></div>
+		<div ng-include="'CodeWarrior-Storefront/views/footer.html'"></div>
 		
 		<!-- Modules -->
-		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="CodeWarrior-Storefront/app.js"></script>
+		<script type="text/javascript" src="CodeWarrior-Storefront/controller/homePageController.js"></script>
+		<script type="text/javascript" src="CodeWarrior-Storefront/controller/aboutPageController.js"></script>
+		<script type="text/javascript" src="CodeWarrior-Storefront/controller/memberPageController.js"></script>
+		<script type="text/javascript" src="CodeWarrior-Storefront/controller/404PageController.js"></script>
 	</body>
 </html>
