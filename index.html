@@ -26,11 +26,9 @@
 	</head>
 	<body ng-app="codewarriorApp">
 		
-		<div ng-include="'CodeWarrior-Storefront/views/header.html'"></div>
-		
+		<headercomponent></headercomponent>
 		<div ng-view></div>
-
-		<div ng-include="'CodeWarrior-Storefront/views/footer.html'"></div>
+		<footercomponent></footercomponent>
 		
 		<!-- Modules -->
 		<script type="text/javascript" src="CodeWarrior-Storefront/app.js"></script>

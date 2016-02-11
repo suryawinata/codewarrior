@@ -22,3 +22,15 @@ app.config(function($routeProvider,$locationProvider) {
 // PLEASE ADD the extension in index.html as well
 
 // COMPONENT SET IN DIRECTIVE available in CodeWarrior-Storefront/views/
+app.directive('footercomponent', function() {
+  return {
+    restrict: 'E',
+    templateUrl: '/CodeWarrior-Storefront/views/components/footer.html'
+  };
+});
+app.directive('headercomponent', function() {
+  return {
+    restrict: 'E',
+    templateUrl: '/CodeWarrior-Storefront/views/components/header.html'
+  };
+});
