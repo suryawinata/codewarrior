@@ -22,19 +22,23 @@ module.exports = function(grunt) {
         src: ["CodeWarrior-Storefront/shared/css/minified/*.min.css"],
         dest: "CodeWarrior-Storefront/shared/css/main.min.css"
       },
+    },
+    sprite:{
+        all: {
+          src: 'CodeWarrior-Storefront/shared/img/raw/*.png',
+          dest: 'CodeWarrior-Storefront/shared/img/sprite/spritesheet.png',
+          destCss: 'CodeWarrior-Storefront/shared/css/release/sprites.css',
+          cssTemplate: 'CodeWarrior-Storefront/shared/handlebars/sprite.handlebars',
+          padding: 5
+        }
     }
-    // connect: {
-    //   codewarrior: {
-    //     port: process.env.PORT || 3000
-    //   }
-    // }
   });
 
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-concat-css');
-  //grunt.loadNpmTasks('grunt-connect');
+  grunt.loadNpmTasks('grunt-spritesmith');
   // Default task(s).
-  grunt.registerTask('heroku', ['cssmin','concat_css']);
+  grunt.registerTask('heroku', ['sprite','cssmin','concat_css',]);
 
 };
 

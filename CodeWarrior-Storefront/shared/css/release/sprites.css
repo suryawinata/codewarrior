@@ -1,0 +1,25 @@
+.icon-code-warrior-logo:before {
+  content: "";
+  background-image: url(../../img/sprite/spritesheet.png);
+  background-position: 0px 0px;
+  width: 200px;
+  height: 90px;
+  float: left;
+}
+.icon-code-warrior-logo-after:after {
+  content: "";
+  background-image: url(../../img/sprite/spritesheet.png);
+  background-position: 0px 0px;
+  width: 200px;
+  height: 90px;
+  float: left;
+  position:absolute;
+}
+.icon-code-warrior-logo-background{
+  content: "";
+  background-image: url(../../img/sprite/spritesheet.png);
+  background-position: 0px 0px;
+  width: 200px;
+  height: 90px;
+  float: left;
+}

@@ -1,0 +1,27 @@
+{{#sprites}}
+.icon-{{name}}:before {
+  content: "";
+  background-image: url({{{escaped_image}}});
+  background-position: {{px.offset_x}} {{px.offset_y}};
+  width: {{px.width}};
+  height: {{px.height}};
+  float: left;
+}
+.icon-{{name}}-after:after {
+  content: "";
+  background-image: url({{{escaped_image}}});
+  background-position: {{px.offset_x}} {{px.offset_y}};
+  width: {{px.width}};
+  height: {{px.height}};
+  float: left;
+  position:absolute;
+}
+.icon-{{name}}-background{
+  content: "";
+  background-image: url({{{escaped_image}}});
+  background-position: {{px.offset_x}} {{px.offset_y}};
+  width: {{px.width}};
+  height: {{px.height}};
+  float: left;
+}
+{{/sprites}}
