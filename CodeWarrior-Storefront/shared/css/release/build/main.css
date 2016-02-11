@@ -1,9 +1,17 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('/CodeWarrior-Storefront/shared/css/fonts/RobotoSlab-Regular.ttf')  format('truetype')
+}
+#about-page .title-area{
+	background: #fff;
+	font-family:'Roboto';
+	font-size: 46px;
+	text-align: center;
+}
+#about-page .body-area{
+	background: #4dbdeb;
+}
 header{
-	background-image: -ms-linear-gradient(top left, #72CEB2 0%, #43B3E3 100%);
-    background-image: -moz-linear-gradient(top left, #72CEB2 0%, #43B3E3 100%);
-    background-image: -o-linear-gradient(top left, #72CEB2 0%, #43B3E3 100%);
-    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #72CEB2), color-stop(1, #43B3E3));
-    background-image: -webkit-linear-gradient(top left, #72CEB2 0%, #43B3E3 100%);
     background-image: linear-gradient(to bottom right, #72CEB2 0%, #43B3E3 100%);
     text-align: center;
     border-bottom: 5px solid #fff;
@@ -110,4 +118,29 @@ header{
     .hvr-bounce-to-right:before{
         background:#fff; 
     }
+}
+.icon-code-warrior-logo:before {
+  content: "";
+  background-image: url(../../img/sprite/spritesheet.png);
+  background-position: 0px 0px;
+  width: 200px;
+  height: 90px;
+  float: left;
+}
+.icon-code-warrior-logo-after:after {
+  content: "";
+  background-image: url(../../img/sprite/spritesheet.png);
+  background-position: 0px 0px;
+  width: 200px;
+  height: 90px;
+  float: left;
+  position:absolute;
+}
+.icon-code-warrior-logo-background{
+  content: "";
+  background-image: url(../../img/sprite/spritesheet.png);
+  background-position: 0px 0px;
+  width: 200px;
+  height: 90px;
+  float: left;
 }

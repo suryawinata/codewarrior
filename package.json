@@ -11,6 +11,7 @@
     "http-server": "^0.8.0"
   },
   "devDependencies": {
+    "grunt-autoprefixer": "^3.0.3",
     "grunt-cli": "^0.1.13",
     "grunt-concat-css": "^0.3.1",
     "grunt-connect": "^0.2.0",

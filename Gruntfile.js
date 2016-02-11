@@ -7,20 +7,17 @@ module.exports = function(grunt) {
       target: {
         files: [{
           expand: true,
-          cwd: 'CodeWarrior-Storefront/shared/css/release',
-          src: ['*.css', '!*.min.css'],
+          cwd: 'CodeWarrior-Storefront/shared/css/release/build/',
+          src: ['main.css'],
           dest: 'CodeWarrior-Storefront/shared/css/minified',
           ext: '.min.css'
         }]
       }
     },
     concat_css: {
-      options: {
-
-      },
       all: {
-        src: ["CodeWarrior-Storefront/shared/css/minified/*.min.css"],
-        dest: "CodeWarrior-Storefront/shared/css/main.min.css"
+        src: ["CodeWarrior-Storefront/shared/css/release/*.css"],
+        dest: "CodeWarrior-Storefront/shared/css/release/build/main.css"
       },
     },
     sprite:{
@@ -31,14 +28,24 @@ module.exports = function(grunt) {
           cssTemplate: 'CodeWarrior-Storefront/shared/handlebars/sprite.handlebars',
           padding: 5
         }
-    }
+    },
+    autoprefixer: {
+        options: {
+          browsers: ['last 2 versions', 'ie 8', 'ie 9']
+        },
+        single_file: {
+          src: 'CodeWarrior-Storefront/shared/css/release/build/main.css',
+          dest: 'CodeWarrior-Storefront/shared/css/release/build/main.css'
+        },
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-concat-css');
   grunt.loadNpmTasks('grunt-spritesmith');
+  grunt.loadNpmTasks('grunt-autoprefixer');
   // Default task(s).
-  grunt.registerTask('heroku', ['sprite','cssmin','concat_css',]);
+  grunt.registerTask('heroku', ['sprite','concat_css','autoprefixer','cssmin']);
 
 };
 
