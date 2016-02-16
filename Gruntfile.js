@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'CodeWarrior-Storefront/shared/css/release/build/',
-          src: ['main.css'],
+          src: ['*.css', '!*.min.css'],
           dest: 'CodeWarrior-Storefront/shared/css/minified',
           ext: '.min.css'
         }]
@@ -16,9 +16,12 @@ module.exports = function(grunt) {
     },
     concat_css: {
       all: {
-        src: ["CodeWarrior-Storefront/shared/css/release/*.css"],
+        src: [
+          //All internal CSS
+          "CodeWarrior-Storefront/shared/css/release/*.css",
+        ],
         dest: "CodeWarrior-Storefront/shared/css/release/build/main.css"
-      },
+      }
     },
     sprite:{
         all: {
@@ -38,169 +41,35 @@ module.exports = function(grunt) {
           dest: 'CodeWarrior-Storefront/shared/css/release/build/main.css'
         },
     },
+    uglify: {
+      options: {
+        mangle: false
+      },
+      my_target: {
+        files: {
+          //All external JS 
+          'CodeWarrior-Storefront/shared/js/external.min.js':[
+            'bower_components/jquery/dist/jquery.min.js', 
+            'bower_components/angular/angular.min.js',
+            'bower_components/angular-route/angular-route.min.js',
+            'bower_components/slicknav/dist/jquery.slicknav.js'
+          ],
+          //All internal JS including custom JS
+          'CodeWarrior-Storefront/shared/js/internal.min.js':[
+            'CodeWarrior-Storefront/app.js', 
+            'CodeWarrior-Storefront/controller/**/*.js'
+          ]
+        }
+      }
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-concat-css');
   grunt.loadNpmTasks('grunt-spritesmith');
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   // Default task(s).
-  grunt.registerTask('heroku', ['sprite','concat_css','autoprefixer','cssmin']);
+  grunt.registerTask('default', ['sprite','concat_css','autoprefixer','cssmin','uglify']);
 
 };
-
-// NEED TO RECONFIG THE GRUNT
-// module.exports = function(grunt) {
-//   // Project configuration.
-//   grunt.initConfig({
-//     pkg: grunt.file.readJSON('package.json'),
-//     watch: {
-//         less: {
-//             files: ['web/webroot/WEB-INF/_ui-src/shared/less/variableMapping.less','web/webroot/WEB-INF/_ui-src/shared/less/generatedVariables.less','web/webroot/WEB-INF/_ui-src/**/themes/**/less/variables.less','web/webroot/WEB-INF/_ui-src/**/themes/**/less/style.less','web/webroot/WEB-INF/_ui-src/**/themes/**/less/**.less'],
-//             tasks: ['less'],
-//         },
-//         fonts: {
-//             files: ['web/webroot/WEB-INF/_ui-src/**/themes/**/fonts/*'],
-//             tasks: ['sync:syncfonts'],
-//         },
-//         ybasejs: {
-//             files: ['web/webroot/WEB-INF/_ui-src/responsive/lib/ybase-0.1.0/js/**/*.js'],
-//             tasks: ['sync:syncybase'],
-//         },
-//         jquery: {
-//             files: ['web/webroot/WEB-INF/_ui-src/responsive/lib/jquery*.js'],
-//             tasks: ['sync:syncjquery'],
-//         },
-//         customjs: {
-//             files: ['web/webroot/WEB-INF/_ui-src/responsive/lib/customize/*.js'],
-//             tasks: ['sync:synccustomjs'],
-//         },
-//         img:{
-//           files: ['web/webroot/WEB-INF/_ui-src/**/themes/**/images/*'],
-//             tasks: ['sprite'],
-//         },
-//     },
-//     less: {
-//         default: {
-//             files: [
-//                 {
-//                     expand: true,
-//                     cwd: 'web/webroot/WEB-INF/_ui-src/',
-//                     src: '**/themes/**/less/style.less',
-//                     dest: 'web/webroot/_ui/',
-//                     ext: '.css',
-//                     rename:function(dest,src){
-//                        var nsrc = src.replace(new RegExp("/themes/(.*)/less"),"/theme-$1/css");
-//                        return dest+nsrc;
-//                     }
-//                 },
-//                 {
-//                   expand: true,
-//                     cwd: 'web/webroot/WEB-INF/_ui-src/',
-//                     src: '**/themes/**/less/IEFix.less',
-//                     dest: 'web/webroot/_ui/',
-//                     ext: '.css',
-//                     rename:function(dest,src){
-//                        var nsrc = src.replace(new RegExp("/themes/(.*)/less"),"/theme-$1/css");
-//                        return dest+nsrc;
-//                     }
-//                 },
-//                 {
-//                   expand: true,
-//                     cwd: 'web/webroot/WEB-INF/_ui-src/',
-//                     src: '**/themes/**/less/hybrisCmsLiveEdit.less',
-//                     dest: 'web/webroot/_ui/',
-//                     ext: '.css',
-//                     rename:function(dest,src){
-//                        var nsrc = src.replace(new RegExp("/themes/(.*)/less"),"/theme-$1/css");
-//                        return dest+nsrc;
-//                     }
-//                 },
-//                 {
-//                   expand: true,
-//                     cwd: 'web/webroot/WEB-INF/_ui-src/',
-//                     src: '**/themes/**/less/errorPage.less',
-//                     dest: 'web/webroot/_ui/',
-//                     ext: '.css',
-//                     rename:function(dest,src){
-//                        var nsrc = src.replace(new RegExp("/themes/(.*)/less"),"/theme-$1/css");
-//                        return dest+nsrc;
-//                     }
-//                 },
-//                 {
-//                     expand: true,
-//                     cwd: 'web/webroot/WEB-INF/_ui-src/',
-//                     src: '**/themes/**/less/parcelpoint.less',
-//                     dest: 'web/webroot/_ui/',
-//                     ext: '.css',
-//                     rename:function(dest,src){
-//                        var nsrc = src.replace(new RegExp("/themes/(.*)/less"),"/theme-$1/css");
-//                        return dest+nsrc;
-//                     }
-//                 }
-
-//             ]
-//         },
-//     },
-
-//     sync : {
-//       syncfonts: {
-//         files: [{
-//                 expand: true,
-//           cwd: 'web/webroot/WEB-INF/_ui-src/',
-//           src: '**/themes/**/fonts/*',
-//           dest: 'web/webroot/_ui/',
-//           rename:function(dest,src){
-//                   var nsrc = src.replace(new RegExp("/themes/(.*)"),"/theme-$1");
-//                   return dest+nsrc;
-//              }
-//         }]
-//       },
-//       syncybase: {
-//         files: [{
-//           cwd: 'web/webroot/WEB-INF/_ui-src/responsive/lib/ybase-0.1.0/js/',
-//           src: '**/*.js',
-//           dest: 'web/webroot/_ui/responsive/common/js',
-//         }]
-//       },
-//       syncjquery: {
-//         files: [{
-//           cwd: 'web/webroot/WEB-INF/_ui-src/responsive/lib',
-//           src: 'jquery*.js',
-//           dest: 'web/webroot/_ui/responsive/common/js',
-//         }]
-//       },
-//       synccustomjs:{
-//         files: [{
-//           cwd: 'web/webroot/WEB-INF/_ui-src/responsive/lib/customize',
-//           src: '*.js',
-//           dest: 'web/webroot/_ui/responsive/common/js/customize',
-//         }]
-//       },
-//     },
-    
-//     sprite:{
-//         all: {
-//           src: 'web/webroot/WEB-INF/_ui-src/responsive/themes/qantas/images/*.png',
-//           dest: 'web/webroot/_ui/responsive/theme-qantas/images/spritesheet.png',
-//           destCss: 'web/webroot/_ui/responsive/theme-qantas/css/sprites.css',
-//           cssTemplate: 'web/webroot/WEB-INF/_ui-src/responsive/themes/qantas/images/template.handlebars',
-//           padding: 5
-//         }
-//     }
-    
-// });
- 
-//   // Plugins
-//   grunt.loadNpmTasks('grunt-contrib-watch');
-//   grunt.loadNpmTasks('grunt-contrib-less');
-//   grunt.loadNpmTasks('grunt-sync');
-//   grunt.loadNpmTasks('grunt-spritesmith');
-
-
-//   // Default task(s).
-//   grunt.registerTask('default', ['less', 'sync', 'sprite']);
-
-
-
-// };

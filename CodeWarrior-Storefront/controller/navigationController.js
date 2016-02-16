@@ -43,6 +43,5 @@ angular.module('codewarriorApp').controller('navigationController', function($sc
 			duration: 500,
 			closeOnClick:true
 		});
-
 	});
 });
