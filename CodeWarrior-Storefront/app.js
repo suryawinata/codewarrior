@@ -31,6 +31,7 @@ app.directive('footercomponent', function() {
 app.directive('headercomponent', function() {
   return {
     restrict: 'E',
-    templateUrl: '/CodeWarrior-Storefront/views/components/header.html'
+    templateUrl: '/CodeWarrior-Storefront/views/components/header.html',
+    controller: 'navigationController'
   };
 });

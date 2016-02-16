@@ -1,10 +1,10 @@
-<header>
+<header ng-controller="navigationController">
 	<div id="mobile-menu">
 	</div>
 	<div class="top-main container center-block">
 		<div class="col-xs-12 col-sm-4">
 			<a class="scroll" href="#/">
-				<img class="codewarrior-logo" src="/CodeWarrior-Storefront/shared/img/code-warrior-logo.png" />
+				<img class="codewarrior-logo" src="/CodeWarrior-Storefront/shared/img/raw/code-warrior-logo.png" />
 			</a>
 		</div>
 		<div class="col-xs-12 col-sm-8">
@@ -19,12 +19,9 @@
 			</div>
 			<div class="col-xs-12">
 				<nav id="menu" class="pull-right">
-					<li class="hvr-bounce-to-right"><a class="scroll" href="#/about">About</a></li>
-					<li class="hvr-bounce-to-right"><a class="scroll" href="#/members">Members</a></li>
-					<li class="hvr-bounce-to-right"><a class="scroll" href="#/clients">Clients</a></li>
-					<li class="hvr-bounce-to-right"><a class="scroll" href="#/blog">Blog</a></li>
-					<li class="hvr-bounce-to-right"><a class="scroll" href="#/career">Career</a></li>
-					<li class="hvr-bounce-to-right"><a class="scroll" href="#/contact">Contact</a></li>
+					<li class="hvr-bounce-to-right" ng-repeat="navigation in navigations | orderBy:'displayOrder'">
+						<a class="scroll" href="{{navigation.url}}">{{navigation.name}}</a>
+					</li>
 				</nav>
 			</div>
 		</div>
