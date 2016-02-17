@@ -111,3 +111,26 @@ header{
         background:#fff; 
     }
 }
+
+.mainview.ng-enter {
+  -webkit-transition: .3s linear all; /* Safari/Chrome */
+  -moz-transition: .3s linear all; /* Firefox */
+  -o-transition: .3s linear all; /* Opera */
+  transition: .3s linear all; /* IE10+ and Future Browsers */
+}
+
+/**
+ * Pre animation -> enter
+ */
+.mainview.ng-enter{
+  /* The animation preparation code */
+  opacity: 0;
+}
+
+/**
+ * Post animation -> enter
+ */
+.mainview.ng-enter.ng-enter-active { 
+  /* The animation code itself */
+  opacity: 1;
+}

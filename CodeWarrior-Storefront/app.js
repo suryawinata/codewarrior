@@ -1,4 +1,4 @@
-var app = angular.module("codewarriorApp", ['ngRoute']);
+var app = angular.module("codewarriorApp", ['ngRoute','ngAnimate']);
 // ROUTING CONFIG
 app.config(function($routeProvider,$locationProvider) {
     $routeProvider
