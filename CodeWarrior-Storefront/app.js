@@ -25,7 +25,8 @@ app.config(function($routeProvider,$locationProvider) {
 app.directive('footercomponent', function() {
   return {
     restrict: 'E',
-    templateUrl: '/CodeWarrior-Storefront/views/components/footer.html'
+    templateUrl: '/CodeWarrior-Storefront/views/components/footer.html',
+    controller: 'footerController'
   };
 });
 app.directive('headercomponent', function() {

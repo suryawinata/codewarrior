@@ -1,7 +1,7 @@
-<footer>
+<footer ng-controller="footerController">
 	<div class="container">
 		<ul class="pull-right footer-style">
-			<li>© 2015 Code Warrior</li>
+			<li>© {{CurrentDate | date: 'yyyy'}} Code Warrior</li>
 			<li><a href="/#/terms">Website Terms</a></li>
 			<li><a href="/#/privacy">Privacy</a></li>
 		</ul>
